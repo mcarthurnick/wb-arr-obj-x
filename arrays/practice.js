@@ -128,7 +128,10 @@ var getRandomArbitrary = function () {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr){
+  let randomNumber = getRandomArbitrary();
+  return arr.includes(randomNumber) ? true : false
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -157,13 +160,40 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-////////// PROBLEM 9 //////////
+function removeItem(myGroceryList, item){
+  
+if(!item){
+  return []
+  } else if (myGroceryList.includes(item)) {
+    const index = myGroceryList.indexOf(item);
+    myGroceryList.splice(index,1) 
+    return myGroceryList
+  } else {
+    return myGroceryList;
+  }
+}
+
+function addItem(myGroceryList, addGroc){
+  if(addGroc){
+    myGroceryList.push(addGroc);
+   return myGroceryList
+  } else {
+    return []
+  }
+}
 
 /*
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker(){
+  let numArray = []
+  for(let i = 1; i <= 215; i++){
+    numArray.push(i)
+  }
+  return numArray
+}
+
 
 ////////// PROBLEM 10 //////////
 
@@ -177,7 +207,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
-//Code Here
+function addTen(numbers){
+  let newArray = [];
+  for(let i = 0; i < numbers.length; i++){
+    newArray.push(Number(numbers[i]) + 10)
+  }
+  return newArray;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -200,7 +236,9 @@ for (var i = 0; i < num2; i++) {
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer(arr1, arr2){
+  return arr1.length > arr2.length ? arr1 : arr2
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -210,7 +248,17 @@ for (var i = 0; i < num2; i++) {
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2){
+  let newArray = []
+  for(let i = 0; i < arr1.length; i++){
+    for (let j = 0; j < arr2.length; j++) {
+      if(arr1[i] === arr2[j]){
+        newArray.push(arr1[i])
+      }
+    }
+  }
+  return newArray;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -249,14 +297,19 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(joe, cahlan, ryan, colt);
 
 /*
   Now let's say Cahlan has to take a leave of absence.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for(let i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i] === cahlan){
+    devMountainEmployees.splice(i, 1)
+  }
+  console.log(devMountainEmployees);
+}
 
 ////////// PROBLEM 13 //////////
 
